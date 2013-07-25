@@ -14,9 +14,9 @@ import (
 )
 
 // Smoke Test
-func TestErrorFormatted(testStateManager *testing.T) {
-	if errorValue := ErrorFormatted("%d decimal == %b binary\n", 42, 42); errorValue == nil {
-		testStateManager.Errorf("Failed TestErrorFormatted")
+func TestErrorFormat(testStateManager *testing.T) {
+	if errorValue := ErrorFormat("%d decimal == %b binary\n", 42, 42); errorValue == nil {
+		testStateManager.Errorf("Failed TestErrorFormat")
 	}
 }
 
@@ -28,9 +28,9 @@ func TestFilePrint(testStateManager *testing.T) {
 }
 
 // Smoke Test
-func TestFilePrintFormatted(testStateManager *testing.T){
-	if numberOfBytesWritten, errorValue := FilePrintFormatted(ioutil.Discard, "%d decimal == %b binary\n", 42, 42); (numberOfBytesWritten != 28) || (errorValue != nil) {
-		testStateManager.Errorf("Failed TestFilePrintFormatted")
+func TestFilePrintFormat(testStateManager *testing.T){
+	if numberOfBytesWritten, errorValue := FilePrintFormat(ioutil.Discard, "%d decimal == %b binary\n", 42, 42); (numberOfBytesWritten != 28) || (errorValue != nil) {
+		testStateManager.Errorf("Failed TestFilePrintFormat")
 	}
 }
 
@@ -64,9 +64,9 @@ func TestFileScan(testStateManager *testing.T){
 }
 /*
 // Smoke Test
-func TestFileScanFormatted(testStateManager *testing.T){
-	if numberOfBytesRead, errorValue := FileScanFormatted(reader, unescapedFormatSpecifiers, arguments...); {
-		testStateManager.Errorf("Failed TestFileScanFormatted")
+func TestFileScanFormat(testStateManager *testing.T){
+	if numberOfBytesRead, errorValue := FileScanFormat(reader, unescapedFormatSpecifiers, arguments...); {
+		testStateManager.Errorf("Failed TestFileScanFormat")
 	}
 }
 
@@ -85,9 +85,9 @@ func TestPrint(testStateManager *testing.T){
 }
 
 // Smoke Test
-func TestPrintFormatted(testStateManager *testing.T) {
-	if numberOfBytesPrinted, errorValue := PrintFormatted("%d decimal == %b binary\n", 42, 42); (numberOfBytesPrinted != 28) || (errorValue != nil) {
-		testStateManager.Errorf("Failed TestPrintFormatted")
+func TestPrintFormat(testStateManager *testing.T) {
+	if numberOfBytesPrinted, errorValue := PrintFormat("%d decimal == %b binary\n", 42, 42); (numberOfBytesPrinted != 28) || (errorValue != nil) {
+		testStateManager.Errorf("Failed TestPrintFormat")
 	}
 }
 
@@ -106,9 +106,9 @@ func TestScan(testStateManager *testing.T) {
 }
 
 // Smoke Test
-func TestScanFormatted(testStateManager *testing.T){
-	if numberOfBytesRead, errorValue := ScanFormatted(unescapedFormatSpecifiers, arguments...); {
-		testStateManager.Errorf("Failed TestScanFormatted")
+func TestScanFormat(testStateManager *testing.T){
+	if numberOfBytesRead, errorValue := ScanFormat(unescapedFormatSpecifiers, arguments...); {
+		testStateManager.Errorf("Failed TestScanFormat")
 	}
 }
 
@@ -127,9 +127,9 @@ func TestStringPrint(testStateManager *testing.T){
 }
 
 // Smoke Test
-func TestStringPrintFormatted(testStateManager *testing.T){
-	if argumentsAsString := StringPrintFormatted(unescapedFormatSpecifiers, arguments...); {
-		testStateManager.Errorf("Failed TestStringPrintFormatted")
+func TestStringPrintFormat(testStateManager *testing.T){
+	if argumentsAsString := StringPrintFormat(unescapedFormatSpecifiers, arguments...); {
+		testStateManager.Errorf("Failed TestStringPrintFormat")
 	}
 }
 
@@ -148,9 +148,9 @@ func TestStringScan(testStateManager *testing.T){
 }
 
 // Smoke Test
-func TestStringScanFormatted(testStateManager *testing.T){
-	if numberOfBytesRead, errorValue := StringScanFormatted(stringToScan, unescapedFormatSpecifiers, arguments...); {
-		testStateManager.Errorf("Failed TestStringScanFormatted")
+func TestStringScanFormat(testStateManager *testing.T){
+	if numberOfBytesRead, errorValue := StringScanFormat(stringToScan, unescapedFormatSpecifiers, arguments...); {
+		testStateManager.Errorf("Failed TestStringScanFormat")
 	}
 }
 

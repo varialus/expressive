@@ -218,22 +218,6 @@ import (
 	"io"
 )
 
-/*
-    DONE func Errorf(format string, a ...interface{}) error
-	ErrorFormatted
-    DONE func Fprint(w io.Writer, a ...interface{}) (n int, err error)
-	FilePrint
-    DONE func Printf(format string, a ...interface{}) (n int, err error)
-	PrintFormatted
-    type Formatter
-    type GoStringer
-    type ScanState
-    type Scanner
-    type State
-    type Stringer
-
-*/
-
 // Fprint formats using the default formats for its operands and writes to w.
 // Spaces are added between operands when neither is a string.
 // It returns the number of bytes written and any write error encountered.
